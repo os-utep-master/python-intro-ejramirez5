@@ -1,11 +1,11 @@
 import string
 import sys
 def main(argv):
-    inputfile = sys.argv[0]
-    outputfile = sys.argv[1]
+    inputfile = sys.argv[1]
+    outputfile = sys.argv[2]
     word_list = {}
     temp = 0
-    PunctuationTranslator = string.maketrans(string.punctuation,' '*len(string.punctuation))
+    PunctuationTranslator = str.maketrans(string.punctuation,' '*len(string.punctuation))
 
     with open(inputfile) as file:
         for line in file:
@@ -18,9 +18,10 @@ def main(argv):
                     word_list[i] = temp + 1
                 else:
                     word_list[i] = 1
-    OutFile = open(outputFile, "w+")
+    OutFile = open(outputfile, "w+")
     for i in sorted(word_list.keys()):
         curLine = i+" "+ str(word_list[i])
         OutFile.write(curLine + '\n')
     OutFile.close()
 
+main(sys.argv)
