@@ -2,7 +2,7 @@ import string
 import sys
 def main(argv):
     """
-    Take all words from a file and writes them to a seperate file alphabeticaly along with their frequency.
+    Takes all words from a file and writes them to a seperate file alphabetically along with their frequency.
     
     Reads a file line by line adding each previously unencountered word to a dictionary with a value of 1.
     If a word that has already been added to the dictionary is encountered again it's value is increased by 1.
@@ -26,7 +26,7 @@ def main(argv):
 
     with open(inputfile) as file:
         for line in file:
-            line =line.translate(PunctuationTranslator) # removes all punctautions
+            line =line.translate(PunctuationTranslator) # removes all punctuations replacing them with a space
             line = line.lower()    
             values = line.split()      
             for i in values:
